@@ -50,34 +50,16 @@ The project was developed as part of the **Maritime Systems Laboratory** in the 
 
 ---
 
+
 ## Methodology
 
-Acceleration Measurement
-        │
-        ▼
-Signal Conditioning
-(Amplification + Low-Pass Filter)
-        │
-        ▼
-ATmega32 ADC Data Acquisition
-        │
-        ▼
-UART Data Transmission
-        │
-        ▼
-MATLAB Signal Processing
-(Calibration + Filtering + Drift Correction)
-        │
-        ▼
-Velocity Estimation
-(Numerical Integration)
-        │
-        ▼
-Displacement Estimation
-(Second Numerical Integration)
-        │
-        ▼
-Building Floor Height Estimation
+- Designed and assembled an acceleration measurement circuit using the ADXL335 MEMS accelerometer, operational amplifiers, and an active second-order low-pass filter.
+- Tested and validated the analog signal conditioning circuit by determining the cut-off frequency using both frequency response and step response methods.
+- Configured the ATmega32 microcontroller to acquire acceleration data through its ADC and transmit the sampled data via UART.
+- Recorded acceleration data during elevator movement between the second and third floors of the T-Building at Hochschule Bremerhaven.
+- Developed MATLAB scripts to calibrate the sensor data, apply Butterworth low-pass filtering, and compensate for sensor offset and integration drift.
+- Implemented numerical integration techniques to estimate velocity and displacement from the processed acceleration data.
+- Calculated the building floor height from the estimated displacement and validated the results by averaging measurements from multiple elevator trips.
 ---
 
 ## Results
